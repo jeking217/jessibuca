@@ -118,6 +118,7 @@ export const WORKER_SEND_TYPE = {
 
 //
 export const EVENTS = {
+    screenshot: 'screenshot',
     fullscreen: 'fullscreen$2',
     webFullscreen: 'webFullscreen',
     decoderWorkerInit: 'decoderWorkerInit',

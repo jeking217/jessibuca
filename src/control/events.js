@@ -1,4 +1,5 @@
 import {clamp, isMobile, setStyle} from "../utils";
+import {EVENTS} from "../constant";
 
 export default (player, control) => {
     const {
@@ -83,7 +84,11 @@ export default (player, control) => {
 
     proxy(control.$screenshot, 'click', (e) => {
         e.stopPropagation();
-        player.video.screenshot();
+        if(player._opt.screenshotevent){
+            player.master.emit(EVENTS.screenshot);
+        }else{
+            player.video.screenshot();
+        }
     })
 
     proxy(control.$volumePanel, 'click', event => {

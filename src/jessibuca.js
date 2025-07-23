@@ -143,7 +143,7 @@ class Jessibuca extends Emitter {
     }
 
     _initPlayer($container, options) {
-        this.player = new Player($container, options);
+        this.player = new Player($container, options,this);
         try {
             this.debug.log('jessibuca', '_initPlayer', JSON.stringify(this.player.getOption()))
         } catch (e) {

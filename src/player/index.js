@@ -30,8 +30,9 @@ import NoSleep from "../utils/noSleep";
 import screenfull from "screenfull";
 
 export default class Player extends Emitter {
-    constructor(container, options) {
+    constructor(container, options,master) {
         super()
+        this.master = master;
         this.$container = container;
         this._opt = Object.assign({}, DEFAULT_PLAYER_OPTIONS, options)
         this.debug = new Debug(this);
